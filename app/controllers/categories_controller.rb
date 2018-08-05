@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.all(created_at: :desc)
+    @categories = Category.all
   end
 
   def update
@@ -29,6 +29,7 @@ class CategoriesController < ApplicationController
       redirect_to categories_path
     else
       render "edit"
+    end
   end
 
   def destroy
@@ -38,7 +39,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-   @category = category.find(params[:id])
+   @category = Category.find(params[:id])
   end
 
   def category_params

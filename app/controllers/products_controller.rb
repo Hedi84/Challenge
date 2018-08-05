@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all(created_at: :desc)
+    @products = Product.all.order(creation_date: :desc)
   end
 
   def update
@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
       redirect_to products_path
     else
       render "edit"
+    end
   end
 
   def destroy
