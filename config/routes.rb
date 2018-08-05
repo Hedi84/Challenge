@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'category/new'
+  get 'category/create'
+  get 'category/show'
+  get 'category/index'
+  get 'category/update'
+  get 'category/destroy'
   get 'products/new'
   get 'products/create'
   get 'products/show'
