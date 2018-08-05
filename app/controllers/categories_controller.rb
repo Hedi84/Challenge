@@ -1,4 +1,5 @@
-class CategoryController < ApplicationController
+class CategoriesController < ApplicationController
+
    before_action :set_category, except: [:new, :index, :create]
 
   def new
