@@ -15,7 +15,7 @@
     %li= link_to category.name, category_path(category)
 
 
-  %p Add this project to another
-  = link_to "category", new_product_match_path(@product)
+  %p
+    Add this project to another #{link_to "category", new_product_match_path(@product)}
 
 
