@@ -1,0 +1,4 @@
+%h1 Products
+%ul
+= @products.each do |product|
+  %li= link_to product.title, products_path(product.id)
