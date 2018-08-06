@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.4'
 
+gem 'faker'
 gem 'haml'
 gem 'simple_form'
 gem 'bootstrap-sass'
