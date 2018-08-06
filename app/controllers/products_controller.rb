@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.creation_date = DateTime.now.to_date
     if @product.save
       redirect_to product_path(@product)
     else

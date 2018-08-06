@@ -2,4 +2,8 @@
   %li= @product.title
   %li= @product.description
   %li= @product.creation_date
-  %li= link_to @product.match.category.name, categories_path(@product.match.category.id)
+
+  %p Categories for this product:
+  %ul
+
+
