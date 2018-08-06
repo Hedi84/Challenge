@@ -16,6 +16,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    # ordering products from newest to oldest
     @products = @category.products.order(created_at: :desc)
 
   end
@@ -25,14 +26,15 @@ class CategoriesController < ApplicationController
 
   end
 
-  def update
-    @category.update(category_params)
-    if category.save
-      redirect_to categories_path
-    else
-      render "edit"
-    end
-  end
+  # No need to update categories I suppose
+  # def update
+  #   @category.update(category_params)
+  #   if category.save
+  #     redirect_to categories_path
+  #   else
+  #     render "edit"
+  #   end
+  # end
 
   def destroy
     @category.delete

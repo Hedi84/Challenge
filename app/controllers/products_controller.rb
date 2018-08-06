@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    # this column is redundant
     @product.creation_date = DateTime.now.to_date
     if @product.save
       redirect_to product_path(@product)
@@ -21,12 +22,13 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all.order(creation_date: :desc)
+    # better to have them ordered by title on product index
+    @products = Product.all.order(title: :asc)
   end
 
   def update
     @product.update(product_params)
-    if product.save
+    if @product.save
       redirect_to products_path
     else
       render "edit"

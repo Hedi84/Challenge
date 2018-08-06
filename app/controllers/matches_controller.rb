@@ -4,7 +4,7 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
-    @categories = Category.all.order(:name)
+    # @categories = Category.all.order(:name)
   end
 
   def create
@@ -21,6 +21,7 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
     @product = @match.product
     @match.destroy
+    # go back to the product show page after removing category
     redirect_to show_path(@product)
   end
 
@@ -31,6 +32,8 @@ class MatchesController < ApplicationController
   end
 
   def match_params
+    #since you add the category from the product show, the product_id is already
+    # there
     params.require(:match).permit(:category_id)
   end
 end
