@@ -5,14 +5,14 @@ class MatchesController < ApplicationController
 
   def new
     @match = Match.new
-    @categories = Categories.all.order(:name)
+    @categories = Category.all.order(:name)
   end
 
   def create
     @product = Product.find(params[:product_id])
     @match = Match.new(match_params)
-    @match.category = @category
-    if @dose.save
+    @match.product = @product
+    if @match.save
      redirect_to show_path(@product)
    else
      render :new
@@ -36,6 +36,6 @@ class MatchesController < ApplicationController
   end
 
   def match_params
-    params.require(:match).permit(:product_id, :category_id)
+    params.require(:match).permit(:category_id)
   end
 end
