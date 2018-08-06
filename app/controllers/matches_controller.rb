@@ -1,6 +1,5 @@
 class MatchesController < ApplicationController
 
-  before_action :set_match, only: [:destroy]
   before_action :set_product, except: [:destroy]
 
   def new
@@ -9,7 +8,6 @@ class MatchesController < ApplicationController
   end
 
   def create
-    @product = Product.find(params[:product_id])
     @match = Match.new(match_params)
     @match.product = @product
     if @match.save
@@ -20,16 +18,13 @@ class MatchesController < ApplicationController
   end
 
   def destroy
-    @match = Match.find(params[id])
+    @match = Match.find(params[:id])
+    @product = @match.product
     @match.destroy
-    redirect to show_path(@product)
+    redirect_to show_path(@product)
   end
 
   private
-
-  def set_dose
-    @match = Match.find(params[:id])
-  end
 
   def set_product
     @product = Product.find(params[:product_id])

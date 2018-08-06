@@ -11,8 +11,8 @@
 
   %p Categories for this product:
   %ul
-  - @product.categories.each do |category|
-    %li= link_to category.name, category_path(category)
+  - @product.matches.each do |match|
+    %li #{link_to match.category.name, category_path(match.category)} - Delete this category #{link_to "X", match_path(match), method: :delete, data: { confirm: 'Are you sure you want to remove the product from this category?' }}
 
 
   %p
