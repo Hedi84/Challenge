@@ -1,3 +1,6 @@
+
+%h1= @category.name
+
 %ul
-= @category.products.order(:title) do |product|
-  %li = link_to product.title, product_path(@product)
+- @products.each do |product|
+  %li= link_to product.title, products_path(product.id)

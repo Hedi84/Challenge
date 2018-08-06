@@ -1,7 +1,7 @@
 %h1 Categories
 %p= link_to "add a product", new_product_path
 %ul
-  = @categories.each do |category|
+  - @categories.each do |category|
     %li= link_to category.name, category_path(category.id)
 
 
