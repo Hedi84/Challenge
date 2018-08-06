@@ -1,9 +1,21 @@
 %ul
-  %li= @product.title
-  %li= @product.description
-  %li= @product.creation_date
+  %li
+    title:
+    = @product.title
+  %li
+    description:
+    = @product.description
+  %li
+    creation date:
+    = @product.creation_date
 
   %p Categories for this product:
   %ul
+  - @product.categories.each do |category|
+    %li= link_to category.name, category_path(category)
+
+
+  %p Add this project to another
+    = link_to "category", new_match_path
 
 

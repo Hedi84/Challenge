@@ -1,6 +1,8 @@
 
 %h1= @category.name
 
+%p Products in this category:
+
 %ul
 - @products.each do |product|
-  %li= link_to product.title, products_path(product.id)
+  %li= link_to product.title, show_path(product)
