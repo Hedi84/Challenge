@@ -16,7 +16,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @products = @category.products.order(:title)
+    @products = @category.products.order(created_at: :desc)
 
   end
 
