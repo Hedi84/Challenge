@@ -1,15 +1,26 @@
-# require 'rails_helper'
-# require 'faker'
+require 'rails_helper'
 
-# RSpec.describe ProductsController, type: :controller do
+RSpec.describe ProductsController, type: :controller do
 
-#   describe "GET index" do
-#     it "has a 200 status code" do
-#       get :index
-#       expect(response.status).to eq(200)
-#     end
-#   end
+  params = { id: 15 }
+
+  describe "GET index" do
+    it "has a 200 status code" do
+      get :index
+      expect(response.status).to eq(200)
+    end
+  end
 
 
-# end
+  describe "POST #create" do
+    it "creates a new product" do
+     shaver = Product.create(title: 'Shaver', description: 'smooth legs and chest whenever')
+     expect(shaver.title).to eq("Shaver")
+    end
+  end
+
+
+
+
+end
 
