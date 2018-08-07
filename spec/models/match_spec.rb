@@ -9,7 +9,7 @@ RSpec.describe Match, type: :model do
     expect(new_match).to be_valid
   end
 
-  it 'should be valid' do
+  it 'should be possible to add multiple products to a category' do
     product_1 = Product.create(title: 'Funzo', description: 'A Simpsons based toy')
     category_1 = Category.create(name: 'Soft Toys')
     category_2 = Category.create(name: 'Fun')
@@ -24,7 +24,7 @@ RSpec.describe Match, type: :model do
     expect(product_1.categories.count).to eq(5)
   end
 
-  it "should be valid" do
+  it "should not be possible to create a match without a category" do
       dinky_toy = Product.create(title: 'Dinky Toy', description: 'A miniature car')
       match_dinky = Match.create(product_id: dinky_toy.id, category_id: 14)
       expect(match_dinky.errors[:category]).to include('must exist')
