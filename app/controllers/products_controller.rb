@@ -7,9 +7,9 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # a new product is created with user input (params, private method below)
     @product = Product.new(product_params)
-    # this column is redundant
-    @product.creation_date = DateTime.now.to_date
+    # if the product is created, go to the show page, if not, go back to new.
     if @product.save
       redirect_to product_path(@product)
     else
@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
   end
 
   def update
+    # same as new but adds the original information
     @product.update(product_params)
     if @product.save
       redirect_to products_path
@@ -42,6 +43,7 @@ class ProductsController < ApplicationController
   private
 
   def set_product
+    # find the product to show, update and destroy
    @product = Product.find(params[:id])
   end
 

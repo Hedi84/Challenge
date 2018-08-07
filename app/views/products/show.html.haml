@@ -7,7 +7,7 @@
     = @product.description
   %li
     creation date:
-    = @product.creation_date
+    = @product.created_at.strftime("%m/%d/%Y")
 
   %p Categories for this product:
   %ul
