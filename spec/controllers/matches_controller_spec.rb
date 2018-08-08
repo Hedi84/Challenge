@@ -15,8 +15,8 @@ RSpec.describe MatchesController, type: :controller do
   it 'should create match' do
      feather = Product.create(title: "Feather", description: "it tickles")
      birds = Category.create(name: "Birds")
-     params_match = {product_id: feather.id, category_id: birds.id}
-     expect { post(:create, params: { match: params_match }) }.to change(Match, :count).by(1)
+     params_match = { category_id: birds.id}
+     expect { post(:create, params: { product_id: feather.id, match: params_match }) }.to change(Match, :count).by(1)
    end
 end
 
