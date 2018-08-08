@@ -11,12 +11,27 @@ RSpec.describe MatchesController, type: :controller do
   end
  end
 
+ describe "post #create" do
+  it 'should create match' do
+     feather = Product.create(title: "Feather", description: "it tickles")
+     birds = Category.create(name: "Birds")
+     params_match = {product_id: feather.id, category_id: birds.id}
+     expect { post(:create, params: { match: params_match }) }.to change(Match, :count).by(1)
+   end
+end
+
+
 end
 
 RSpec.describe MatchesController, type: :routing do
- describe 'routing' do
-    it 'routes to #delete via DESTROY' do
-     expect(delete: '/matches/1').to route_to('matches#destroy', id: '1')
-    end
+  describe 'routing' do
+
+      it 'routes to #delete via DESTROY' do
+       expect(delete: '/matches/1').to route_to('matches#destroy', id: '1')
+      end
+
+     it 'routes to #new' do
+      expect(get: '/products/1/matches/new').to route_to('matches#new', product_id: '1')
+     end
   end
 end
