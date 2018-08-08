@@ -10,4 +10,5 @@
     %p
       = link_to product.title, show_path(product)
       = product.description
+      = product.created_at.strftime("%m/%d/%Y")
 

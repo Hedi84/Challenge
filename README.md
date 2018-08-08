@@ -14,4 +14,6 @@ The application allows a user to create a product with a title and descricption.
 
 All of the categories have their own show page, which list the products belonging to that category from newest to oldest (by using reated at). It shows the product names and descriptions.
 
+The automated tests (rspec) can be run by typing 'rake' in the terminal.
+
 I was very pleased to receive a challenge that was so clearly written, and at the same time very doable. Many to many relationships always need a bit of preparation (drawing the tables out before starting), but I enjoyed writing the code for this application and it was a great opportunity for me to test my own knowledge. I had never used haml before, and I learnt to write tests with rspec for this test, so feedback on that would be really helpful. Please do not hesitate to contact me if clarification is necessary. As indicated, this application did not need styled, therefore the front-end remains modest.
