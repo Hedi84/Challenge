@@ -34,7 +34,6 @@ puts 'Creating 30 fake products...'
   product = Product.new(
     title:    Faker::Company.name,
     description: Faker::HitchhikersGuideToTheGalaxy.marvin_quote,
-    creation_date:  Faker::Date.between_except(1.year.ago, 1.year.from_now, Date.today)
   )
   product.save!
 

@@ -14,15 +14,12 @@ RSpec.describe Match, type: :model do
     category_1 = Category.create(name: 'Soft Toys')
     category_2 = Category.create(name: 'Fun')
     category_3 = Category.create(name: 'Children')
-    category_4 = Category.create(name: 'Soft')
-    category_5 = Category.create(name: 'Animal')
     match_1 = Match.create(product_id: product_1.id, category_id: category_1.id)
     match_2 = Match.create(product_id: product_1.id, category_id: category_2.id)
     match_3 = Match.create(product_id: product_1.id, category_id: category_3.id)
-    match_4 = Match.create(product_id: product_1.id, category_id: category_4.id)
-    match_5 = Match.create(product_id: product_1.id, category_id: category_5.id)
-    expect(product_1.categories.count).to eq(5)
+    expect(product_1.categories.count).to eq(3)
   end
+
 
   it "should not be possible to create a match without a category" do
       dinky_toy = Product.create(title: 'Dinky Toy', description: 'A miniature car')

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   root to: 'categories#index'
-  resources :categories, only: [:show, :index]
+  resources :categories, except: [:update]
   resources :products do
     resources :matches, only:[:new, :create]
   end
