@@ -2,9 +2,10 @@
   %h1 Categories
   .product-link
     = link_to "Add a product", new_product_path
-  %ul
-    - @categories.each do |category|
-      %li= link_to category.name, category_path(category.id)
+  .margin-categories
+    %ul
+      - @categories.each do |category|
+        %li= link_to category.name, category_path(category.id)
 
 
 
