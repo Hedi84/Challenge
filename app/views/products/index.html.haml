@@ -1,5 +1,6 @@
 %h1 Products
-%p= link_to "add a product", new_product_path
+.product-link
+  = link_to "Add a product", new_product_path
 %ul
 - @products.each do |product|
   %li= link_to product.title, show_path(product.id)
