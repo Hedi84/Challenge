@@ -10,6 +10,11 @@ RSpec.describe Product, type: :model do
     shaver = Product.create(title: 'Shaver', description: 'smooth legs and chest whenever')
     expect(shaver.title).to eq("Shaver")
   end
+
+  it 'should be invalid with an empty string as a title' do
+    naughty = Product.new(title: '')
+    expect(naughty).to be_invalid
+  end
 end
 
 

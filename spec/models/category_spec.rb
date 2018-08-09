@@ -5,4 +5,9 @@ RSpec.describe Category, type: :model do
     category = Category.new(name: 'Toys')
     expect(category).to be_valid
   end
+
+   it 'should be invalid with an empty string as a name' do
+    bad = Category.new(name: '')
+    expect(bad).to be_invalid
+  end
 end
