@@ -6,7 +6,10 @@
       %h3
         = link_to category.name,category_path(category)
       %p
-        This category currently has #{category.matches.count} products.
+        - if category.matches.count == 1
+          This category currently has #{category.matches.count} product.
+        - else
+          This category currently has #{category.matches.count} products.
 
 
 

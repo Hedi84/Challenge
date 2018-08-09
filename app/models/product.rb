@@ -3,3 +3,4 @@ class Product < ApplicationRecord
   has_many :categories, through: :matches
   validates :title, presence: true, uniqueness: true
 end
+

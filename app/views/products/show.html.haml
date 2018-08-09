@@ -2,9 +2,10 @@
   %h1= @product.title
   %p
     #{link_to "Update", edit_product_path(@product)} this product or add this project to a #{link_to "category", new_product_match_path(@product)}.
+  .show-box
     %p
-      %b Description:
-      = @product.description
+    %b Description:
+    = @product.description
     %p
       %b Creation date:
       = @product.created_at.strftime("%m/%d/%Y")
@@ -12,7 +13,7 @@
     - if @product.matches.count > 0
       %p Categories for this product (click category to view):
       - @product.matches.each do |match|
-        .my-box
+        .my-box-margin
           %h4 #{link_to match.category.name, category_path(match.category)}
           %p #{link_to "Remove product from this category", match_path(match), method: :delete, data: { confirm: 'Are you sure you want to remove the product from this category?' }}
     - else

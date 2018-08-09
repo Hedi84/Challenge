@@ -12,6 +12,7 @@ class MatchesController < ApplicationController
     # the product can be accessed through the match
     @match.product = @product
     # if save go to the product show page, if not, go back to new.
+    @matches = Match.all
     if @match.save
       redirect_to show_path(@product)
     else
