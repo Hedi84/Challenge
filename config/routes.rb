@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :matches, only: [:destroy]
   get '/products/:id', to: 'products#show', as: 'show'
+  get '/products/:id', to: 'products#destroy', as: 'delete'
 
 
 

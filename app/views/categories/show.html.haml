@@ -1,17 +1,16 @@
-.margin
+.my-flex
   %h1=@category.name
   - if @products.count > 0
     %p Products in this category:
     %p (Click the product to view)
-    %ul
     - if @products.count > 0
-      - @products.each do |product|
-        %li
-          %p.link-behaviour
-            = link_to product.title, show_path(product)
-            = product.description
-  - else
-    %p This category has no products yet.
+      .my-row
+        - @products.each do |product|
+          .my-box-bigger
+            %h4= link_to product.title, show_path(product)
+            %p= h truncate(product.description, length: 100)
+    - else
+      %p This category has no products yet.
 
 
 
