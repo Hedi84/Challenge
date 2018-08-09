@@ -13,14 +13,13 @@ class MatchesController < ApplicationController
     @match.product = @product
     # if save go to the product show page, if not, go back to new.
     if @match.save
-     redirect_to show_path(@product)
-   else
+      redirect_to show_path(@product)
+    else
      render "new"
-   end
+    end
   end
 
   def destroy
-
     @match = Match.find(params[:id])
     # I want to redirect to the product show after removing the match, so the
     # product should be specified

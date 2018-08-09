@@ -1,10 +1,12 @@
-.margin
+.my-flex
   %h1 Categories
   %p Click a category to view its products:
-  %ul
-    - @categories.each do |category|
-      %li.link-behaviour
-        = link_to category.name, category_path(category.id)
+  - @categories.each do |category|
+    .my-box
+      %h3
+        = link_to category.name,category_path(category)
+      %p
+        This category currently has #{category.matches.count} products.
 
 
 

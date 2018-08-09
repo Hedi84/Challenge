@@ -1,13 +1,32 @@
 // Specific CSS for your home-page
 
 
-.margin {
 
-  margin-left: 50px;
+.my-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
-.form {
+.my-box {
+  display: flex;
+  box-shadow:  0px 3px 10px  rgba(0,0,0,0.2);
+  width: 500px;
+  height: 100px;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: no-wrap;
+  justify-content: space-around;
+  margin: 10px;
+  background-color: white;
 
-  margin-left: 50px;
-  margin-right: 50px;
 }
+
+.my-box:hover {
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+
+}
+
+
+

@@ -7,8 +7,9 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    # there is no create a category option, but if there would be, this would
+    # there is no create a category option, but if there was, this would
     # show all categories after saving, if not, it would go back to new.
+    # Currently, there is no matching route.
     @category = Category.new(category_params)
     if @category.save
       redirect_to category_path(@category)
@@ -20,13 +21,11 @@ class CategoriesController < ApplicationController
   def show
     # ordering products from newest to oldest
     @products = @category.products.order(created_at: :desc)
-
   end
 
   def index
     # ordering categories by name so they are easier to find
     @categories = Category.all.order(:name)
-
   end
 
   # No need to update categories at this time
