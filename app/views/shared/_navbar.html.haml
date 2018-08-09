@@ -2,11 +2,14 @@
   / Right Navigation
   .navbar-wagon-right.hidden-xs.hidden-sm
     %a.navbar-wagon-item.navbar-wagon-link
-      = link_to "Categories", root_path
+      .link-behaviour
+        = link_to "Categories", root_path
     %a.navbar-wagon-item.navbar-wagon-link
-      = link_to "Products", products_path
+      .link-behaviour
+        = link_to "Products", products_path
     %a.navbar-wagon-item.navbar-wagon-link
-      = link_to "Add a product", new_product_path
+      .link-behaviour
+        = link_to "Add a product", new_product_path
   / Dropdown appearing on mobile only
   .navbar-wagon-item.hidden-md.hidden-lg
     .dropdown

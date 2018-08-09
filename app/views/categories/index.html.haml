@@ -1,11 +1,10 @@
-.category-index
+.margin
   %h1 Categories
-  .product-link
-    = link_to "Add a product", new_product_path
-  .margin-categories
-    %ul
-      - @categories.each do |category|
-        %li= link_to category.name, category_path(category.id)
+  %p Click a category to view its products:
+  %ul
+    - @categories.each do |category|
+      %li.link-behaviour
+        = link_to category.name, category_path(category.id)
 
 
 

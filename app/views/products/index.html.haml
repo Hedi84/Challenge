@@ -1,10 +1,10 @@
-.category-index
+.margin
   %h1 Products
-
-  .product-link
-    = link_to "Add a product", new_product_path
-  .margin-products
+  %p.link-behaviour
+    Click a product to view it or #{link_to "add a new product", new_product_path}
     %ul
-    - @products.each do |product|
-      %li= link_to product.title, show_path(product.id)
+      - @products.each do |product|
+        %li
+          .link-behaviour
+            = link_to product.title, show_path(product.id)
 

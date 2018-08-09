@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
     # same as new but adds the original information
     @product.update(product_params)
     if @product.save
-      redirect_to products_path
+      redirect_to product_path(@product)
     else
       render "edit"
     end
