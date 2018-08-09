@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
   has_many :matches, dependent: :destroy
   has_many :categories, through: :matches
-  validates :title, uniqueness: true
+  validates :title, uniqueness: true, presence: true
 end
