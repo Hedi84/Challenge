@@ -1,27 +1,25 @@
-.margin-products
+.margin
+  %h1= @product.title
+  %p.link-behaviour
+    #{link_to "Update", edit_product_path(@product)} this product or add this project to a #{link_to "category", new_product_match_path(@product)}
   %p
-    title:
-    = @product.title
-  %p
-    description:
+    Description:
     = @product.description
   %p
-    creation date:
+    Creation date:
     = @product.created_at.strftime("%m/%d/%Y")
 
   - if @product.matches.count > 0
-    %p Categories for this product:
+    %p Categories for this product (click 'x' to remove a product from this category):
     %ul
     - @product.matches.each do |match|
-      %li #{link_to match.category.name, category_path(match.category)} - #{link_to "Delete", match_path(match), method: :delete, data: { confirm: 'Are you sure you want to remove the product from this category?' }}
-    %p Add this project to another #{link_to "category", new_product_match_path(@product)}
+      %li.link-behaviour #{link_to match.category.name, category_path(match.category)} #{link_to "x", match_path(match), method: :delete, data: { confirm: 'Are you sure you want to remove the product from this category?' }}
   - else
     %p This product is not added to any categories yet.
-    %p Add this project to a #{link_to "category", new_product_match_path(@product)}
 
 
 
-  %p
-    #{link_to "Update", edit_product_path(@product)} this product.
+
+
 
 
