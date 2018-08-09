@@ -1,4 +1,20 @@
-%div
- .navbar
-  = link_to "Categories", root_path
-  = link_to "Products", products_path
+.navbar-wagon
+  / Right Navigation
+  .navbar-wagon-right.hidden-xs.hidden-sm
+    %a.navbar-wagon-item.navbar-wagon-link
+      = link_to "Categories", root_path
+    %a.navbar-wagon-item.navbar-wagon-link
+      = link_to "Products", products_path
+    %a.navbar-wagon-item.navbar-wagon-link
+      = link_to "Add a product", new_product_path
+  / Dropdown appearing on mobile only
+  .navbar-wagon-item.hidden-md.hidden-lg
+    .dropdown
+      %i.fa.fa-bars.dropdown-toggle{"data-toggle" => "dropdown"}
+      %ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
+        %li
+          = link_to "Categories", root_path
+        %li
+          = link_to "Products", products_path
+        %li
+          = link_to "Add a product", new_product_path
